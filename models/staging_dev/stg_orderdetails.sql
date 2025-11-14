@@ -1,7 +1,7 @@
 {{ config(
     materialized='incremental',
     unique_key = 'OrderID',
-    schema=env_var('DBT_DBTSCHEMA_NAME', 'STAGING_DEV')
+    schema=env_var('DBT_STGSCHEMA_NAME', 'STAGING_DEV')
 ) }}
  
 select

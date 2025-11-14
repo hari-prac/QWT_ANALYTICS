@@ -1,5 +1,5 @@
 {{ 
-    config(materialized='table',transient=false,schema= env_var('DBT_DBTSCHEMA_NAME','STAGING_DEV'))
+    config(materialized='table',transient=false,schema= env_var('DBT_STGSCHEMA_NAME','STAGING_DEV'))
 }}
 
 SELECT *
