@@ -1,0 +1,17 @@
+version: 2
+ 
+exposures:
+  - name: "rpt_sales_by_customers_dates"
+    type: dashboard
+    maturity: high
+    url: "https://www.google.com"
+    description: provides customers orders by dates
+ 
+    depends_on:
+      - ref('fct_orders')
+      - ref('dim_customers')
+ 
+    owner:
+      name: Harinath
+      email: harinath.a@abc.com
+ 

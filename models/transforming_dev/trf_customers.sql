@@ -1,0 +1,22 @@
+{{ config(materialized = 'table', schema ='transforming_dev')}}
+
+select
+c.customerid,
+c.companyname,
+c.contactname,
+c.city,
+c.country,
+d.divisionname,
+c.address,
+c.fax,
+c.phone,
+c.postalcode,
+coalesce(c.stateprovince,'NA') as state
+
+from 
+{{ ref('stg_customers')}}  c
+left join
+
+{{ ref('lkp_divisions') }} d
+on c.divisionid = d.divisionid
+
