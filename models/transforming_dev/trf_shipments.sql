@@ -1,5 +1,5 @@
-{{ config(materialized='table',schema='transforming_dev')}}
-
+{{ config(materialized='table',schema = env_var('DBT_TRFSCHEMA_NAME','transforming_dev')) }}
+ 
 select 
 ss.orderid,
 ss.lineno,
