@@ -1,10 +1,10 @@
 seeds:
   - name: lkp_divisions
     config:
-      schema: lookup_dev
+      schema: "{{ env_var('DBT_LKPSCHEMA_NAME','LOOKUP_DEV') }}"
   - name: lkp_categories
     config:
-      schema: lookup_dev
+      schema: "{{ env_var('DBT_LKPSCHEMA_NAME','LOOKUP_DEV') }}"
   - name: lkp_shipments
     config:
-      schema: lookup_dev
+      schema: "{{ env_var('DBT_LKPSCHEMA_NAME','LOOKUP_DEV') }}"

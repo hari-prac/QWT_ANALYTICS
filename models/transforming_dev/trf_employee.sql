@@ -1,5 +1,5 @@
-{{ config(materialized = 'table', schema = 'transforming_dev') }}
- 
+{{ config(materialized = 'table', schema = env_var('DBT_TRFSCHEMA_NAME','transforming_dev')) }}
+  
 with recursive managers
  
       (indent, empid, office, firstname, managername, title, hiredate, extension, yearsalary)
